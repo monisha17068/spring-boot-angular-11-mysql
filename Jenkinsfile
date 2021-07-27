@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    docker { image 'node:latest' }
-  }
+  agent { label 'my_node_label' docker 'my_docker_image'}
   stages {
     stage('Install') {
       steps { sh 'npm install' }
